@@ -3,14 +3,14 @@
 import React from "react";
 import SectionHeading from "./section-header";
 import { motion } from "framer-motion";
-
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
-  
+  const { ref } = useSectionInView("About");
 
   return (
     <motion.section
-      
+      ref={ref}
       className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
@@ -19,8 +19,9 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-       I am graduating in software engineering{" "}
-        <span className="font-medium">from Bsc CS &SE honors</span>, I was always passionate about coding from my early childhood. I enrolled in a coding bootcamp and learned{" "}
+        After graduating with a degree in{" "}
+        <span className="font-medium">Accounting</span>, I decided to pursue my
+        passion for programming. I enrolled in a coding bootcamp and learned{" "}
         <span className="font-medium">full-stack web development</span>.{" "}
         <span className="italic">My favorite part of programming</span> is the
         problem-solving aspect. I <span className="underline">love</span> the
