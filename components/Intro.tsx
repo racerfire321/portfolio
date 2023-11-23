@@ -7,9 +7,10 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from '@/lib/hooks'
-
+import { useActiveSectionContext } from '@/context/active-section-context'
 const Intro = () => {
   const { ref } = useSectionInView("Home",0.5);
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
   <section ref={ref} id='home' className='mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]'>
     <div className='flex items-center justify-center'>
@@ -17,7 +18,7 @@ const Intro = () => {
            <motion.div initial={{opacity:0, scale:0}}
            animate ={{opacity:1,scale:1}}
            transition= {{ type :'tween', duration:0.2}}>
-            <Image src="/p.jpg" alt="bitisha" width="192" height="192" quality="95" priority={true}
+            <Image src="/p.jpg" alt="bitisha" width="200" height="200" quality="95" priority={true}
             className='h-24 w-24 rounded-full border-[0.35rem] border-white object-cover shadow-xl' />
          <motion.span
          initial={{opacity:0,scale:0}}
@@ -39,11 +40,22 @@ const Intro = () => {
     initial={{opacity:0, y:100}}
     animate={{opacity:1,y:0}}
     className='mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl'>
-      <span className="font-bold">Greetings, I'm Bitisha Maharjan.</span> I operate as a{" "}
-      <span  className="font-bold">full-stack developer</span> with {" "}
-      <span className="font-bold">1 years</span> of professional experience. I find joy
-      in constructing <span className="italic">websites and applications</span>. My primary focus lies in{" "}
-      <span className="underline hover:text-orange-500 transition duration-500">React (Next.js)</span>
+      Hi, I'm <motion.span
+          initial={{ opacity: 0, translateY: 20 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{
+            type: 'verticle',
+            stiffness: 125,
+            delay: 0.4,
+            duration: 0.7,
+          }}
+          className='font-bold text-4xl'
+        >
+           Bitisha Maharjan.
+        </motion.span> <br /> I operate as a{" "}
+      <span  className="font-bold">full-stack developer</span> . I find joy
+      in constructing userfriendly <span className="italic">websites and applications</span>.My primary focus is  web application using{" "}
+      <span className="underline hover:text-orange-500 transition duration-500">Mern stack   </span>
     </motion.p>
 
     <motion.div
@@ -57,14 +69,17 @@ const Intro = () => {
         <Link
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-        
+        onClick={() => {
+          setActiveSection("Contact")
+          setTimeOfLastClick(Date.now())
+        }}
         >
           Contact me here{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack"
+          className="group bg-white text-black px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack"
           href="/CV.pdf"
           download
         >
