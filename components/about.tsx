@@ -1,32 +1,45 @@
 "use client";
-import React from 'react'
-import SectionHeading from './section-header'
-import {motion} from "framer-motion"
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import SectionHeading from './section-header';
 import { useSectionInView } from '@/lib/hooks';
 
-
 const About = () => {
+  const { ref } = useSectionInView('About');
 
-  const {ref} = useSectionInView('About');
-  
+  const danceAnimation = {
+    y: [0, -10, 0, 10, 0], // Y-axis movement for a dancing effect
+    transition: { duration: 1.5, repeat: Infinity },
+  };
+
   return (
-    <motion.section 
-    ref = {ref}
-    className='mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28'
-    initial={{opacity:0,y:100}}
-    animate={{opacity:1,y:0}}
-    transition={{delay:0.175}}
-    id='about'
+    <motion.section
+      ref={ref}
+      className='relative mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28'
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
+      id='about'
     >
-       <SectionHeading>About me</SectionHeading>
-        <p className='mb-4 font-medium leading-7'>
-        Hi, I&rsquo;m Bitisha Maharjan, a student at PCPS College studying Software Engineering. I enjoy creating apps and websites, aiming to become a well-rounded full-stack developer. I'm familiar with technologies like MERN stack, Next.js, JavaScript,TypeScript, Python, Java and HTML5 canvas for games, and I've completed courses on platforms like Coursera and Amazon, earning certificates. For front-end development, I prefer using React with Tailwind CSS. I&rsquo;m currently looking for opportunities, be it freelancing or a full-time role in web development. 
-        </p>
-        <p className='font-medium leading-7'>
-        In addition to my interests in coding, I like reading a wide variety of literary books. Debugging code issues is a highly engaging exercise that also greatly contributes to my overall professional development by helping me to improve my problem-solving abilities. I enjoy playing the guitar and other musical instruments as a way to clear my head and mentally recharge. I am also quite active in sports, where I have won medals and certificates, among other accolades. This diverse approach not only highlights my dedication to a balanced and holistic work lifestyle, but it also enhances my technical proficiency.
-         </p>
-    </motion.section>
-  )
-}
+      {/* Unique background pattern */}
+      <div className='absolute top-0 left-0 w-full h-full bg-pattern opacity-25'></div>
 
-export default About
+      <SectionHeading>About me</SectionHeading>
+      <motion.p
+        className='mb-4 font-medium leading-7 text-gray-700  dark:text-slate-300'
+        animate={danceAnimation}
+      >
+        Hi, I&rsquo;m Bitisha Maharjan, a Software Engineering student at PCPS College. I have a passion for creating apps and websites, aspiring to become a well-rounded full-stack developer. My proficiency includes technologies such as MERN stack, Next.js, JavaScript, TypeScript, Python, Java, and HTML5 canvas for games. I have completed courses on platforms like Coursera and Amazon, earning certificates. For front-end development, I prefer using React with Tailwind CSS. Currently seeking opportunities, whether freelancing or a full-time role in web development.
+      </motion.p>
+      <motion.p
+        className='font-medium leading-7 text-gray-700  dark:text-slate-300'
+        animate={danceAnimation}
+      >
+        Beyond coding, I enjoy reading a wide variety of literary books. Debugging code issues is a highly engaging exercise that contributes significantly to my professional development by enhancing my problem-solving abilities. Playing musical instruments, including the guitar, is a way for me to clear my head and recharge mentally. I am also active in sports, winning medals and certificates. This diverse approach highlights my dedication to a balanced and holistic work lifestyle, enhancing both my technical proficiency and personal interests.
+      </motion.p>
+    </motion.section>
+  );
+};
+
+export default About;
