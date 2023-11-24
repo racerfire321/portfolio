@@ -12,7 +12,7 @@ const Intro = () => {
   const { ref } = useSectionInView("Home",0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
-  <section ref={ref} id='home' className='mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]'>
+  <section ref={ref} id='home' className='mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[99rem]'>
     <div className='flex items-center justify-center'>
           <div className='relative'>
            <motion.div initial={{opacity:0, scale:0}}
@@ -39,7 +39,7 @@ const Intro = () => {
     <motion.p
     initial={{opacity:0, y:100}}
     animate={{opacity:1,y:0}}
-    className='mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl'>
+    className='mb-10 mt-4 px-4 text-lg font-medium !leading-[1.5] sm:text-4xl'>
       Hi, I&rsquo;m <motion.span
           initial={{ opacity: 0, translateY: 20 }}
           animate={{ opacity: 1, translateY: 0 }}
@@ -52,9 +52,9 @@ const Intro = () => {
           className='font-bold text-4xl'
         >
            Bitisha Maharjan.
-        </motion.span> <br /> I operate as a{" "}
-      <span  className="font-bold">full-stack developer</span> . I find joy
-      in constructing userfriendly <span className="italic">websites and applications</span>.My primary focus is  web application using{" "}
+        </motion.span> <br /> I am a{" "}
+      <span  className="font-bold">full-stack developer</span> . I construct
+       userfriendly <span className="italic">websites and applications</span> , mainly using{" "}
       <span className="underline hover:text-orange-500 transition duration-500">Mern stack   </span>
     </motion.p>
 

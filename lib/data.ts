@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import jumper from "@/public/jumper.jpg";
 import game from "@/public/game.png";
 import messenger from "@/public/messenger.jpg";
+import blog from "@/public/blog.jpg";
 import image from "@/public/image.png";
 export const links = [
   {
@@ -48,7 +49,7 @@ export const experiencesData = [
     description:
       "I worked as a front-end developer as a lerner under senior dev. I also upskilled to the full stack.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2019 - 2022",
   },
   {
     title: "Software engineering",
@@ -89,6 +90,13 @@ export const projectsData = [
       "Jummper guy is a animated game using farmer motion where obstacle need to overpass using awdz keys",
     tags: ["Nextjs", "Javascript", "Canvas", "Farmer-motion", "Redux"],
     imageUrl: jumper,
+  },
+  {
+    title: "Blog app",
+    description:
+      "Blog app with signin auth and mongodb to create blog ",
+    tags: ["React",  "Tailwind", "Javascript","Mongodb"],
+    imageUrl: blog,
   },
   {
     title: "Messenger-clone",
