@@ -40,7 +40,7 @@ const Intro = () => {
     initial={{opacity:0, y:100}}
     animate={{opacity:1,y:0}}
     className='mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl'>
-      Hi, I'm <motion.span
+      Hi, I&rsquo;m <motion.span
           initial={{ opacity: 0, translateY: 20 }}
           animate={{ opacity: 1, translateY: 0 }}
           transition={{
