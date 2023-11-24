@@ -80,7 +80,7 @@ const Intro = () => {
 
         <a
           className="group bg-white text-black px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack"
-          href="/CV.pdf"
+          href="/Bitisha-Maharjan-cv.pdf"
           download
         >
           Download CV{" "}
@@ -89,7 +89,7 @@ const Intro = () => {
 
         <a
           className=" bg-gray-200 p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack"
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/bitisha-maharjan-40862b241/"
           target="_blank"
         >
           <BsLinkedin />
