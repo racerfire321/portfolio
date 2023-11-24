@@ -5,6 +5,7 @@ import { Resend } from "resend";
 import { validateString, getErrorMessage } from "@/lib/utilis"
 import ContactFormEmail from "@/email/contact-form-email";
 
+
 const resend = new Resend(process.env.API_KEY);
 
 export const sendEmail = async (formData: FormData) => {
@@ -22,7 +23,7 @@ export const sendEmail = async (formData: FormData) => {
       error: "Invalid message",
     };
   }
-
+  
   let data;
   try {
     data = await resend.emails.send({
@@ -45,3 +46,7 @@ export const sendEmail = async (formData: FormData) => {
     data,
   };
 };
+
+function MagicLinkEmail(arg0: { url: any; host: any; }): React.ReactElement<any, string | React.JSXElementConstructor<any>> {
+  throw new Error("Function not implemented.");
+}
